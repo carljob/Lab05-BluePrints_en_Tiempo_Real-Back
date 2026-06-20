@@ -33,9 +33,4 @@ public class BlueprintController {
     template.convertAndSend("/topic/blueprints." + evt.author() + "." + evt.name() + ".clear", upd);
   }
 
-  @ResponseBody
-  @GetMapping("/api/blueprints/{author}/{name}")
-  public BlueprintUpdate get(@PathVariable String author, @PathVariable String name) {
-    return new BlueprintUpdate(author, name, List.of(new Point(10,10,"#1e40af"), new Point(40,50,"#1e40af")));
-  }
 }
